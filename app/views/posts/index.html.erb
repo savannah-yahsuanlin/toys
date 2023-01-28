@@ -1,1 +1,8 @@
 <h1>This is tumlr posts</h1>
+
+<% @posts.each do |post| %>
+<h3><%= link_to post.title, post %></h3>
+<small><%= time_ago_in_words(post.created_at) %> ago</small>
+<p><%= post.body %></p>
+
+<% end %>

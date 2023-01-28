@@ -4,12 +4,33 @@
     <title>Tumblr</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'true' %>
+    <%= stylesheet_link_tag    'application', 'https://fonts.googleapis.com/css2?family=Roboto&display=swap' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'true' %>
   </head>
 
   <body>
-    <%= yield %>
+    <div>
+      <ul>
+        <li><%= link_to 'Tumblr', root_path %></li>
+        <li><%= link_to 'Posts', root_path %></li>
+        <li>About</li>
+      </ul>
+
+      <button>Log In</button>
+    </div>
+
+    <div>
+      <h1>Post Feed</h1>
+      <button><%= link_to 'Create a new post', new_post_path %></button>
+      <button>Sign Out</button>
+    </div>
+
+    <% flash.each do |name, msg|%>
+      <%= content.tag[:div, msg]%>
+    <% end %>
+    <%= yield %> 
+    </div>
+    
   </body>
 </html>

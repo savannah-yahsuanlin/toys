@@ -16,8 +16,7 @@ class PostsController < ApplicationController
 
 	def show
 		@post = Post.find(params[:id])
-
-		redirect_to @post
+		
 	end
 
 	private 

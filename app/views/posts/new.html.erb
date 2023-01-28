@@ -1,7 +1,9 @@
 <h1>Add a new post</h1>
 
 <%= form_for :post, url: posts_path do |f| %>
-
+	<% if @post.errors.any? %>
+		<%= @post.errors.full_messages %>
+	<% end %>
 	<p>
 		<%= f.label :title %><br>
 		<%= f.text_field :title %>

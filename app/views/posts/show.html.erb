@@ -9,3 +9,6 @@
 <p>
 	<%= @post.body %>
 </p>
+
+<button><%= link_to 'edit', edit_post_path%></button>
+<button><%= link_to 'Delete', @post, method: :delete, data: {confirm: 'are you sure?'}%></button>

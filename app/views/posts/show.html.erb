@@ -11,4 +11,10 @@
 </p>
 
 <button><%= link_to 'edit', edit_post_path(@post) %></button>
-<button><%= link_to 'Delete', post_path(@post), method: :delete, data: {confirm: 'are you sure?'}%></button>
+<button><%= link_to 'Delete', post_path(@post), method: :delete, data: {confirm: 'are you sure?'} %></button>
+
+
+<h4>Comments <span><%= @post.comments.count %></span></h4>
+
+<p><%= render @post.comments %></p>
+<%= render 'comments/form' %>

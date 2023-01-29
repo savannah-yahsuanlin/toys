@@ -1,0 +1,5 @@
+<p><%= comment.name %> <span style="font-size: 10px"><%= time_ago_in_words(comment.created_at) %></span></p>
+<p>content: <%= comment.body %></p>
+
+<button><%= link_to 'Delete', [comment.post, comment], method: :delete, data:{confirm: 'are you sure?' } %></button>
+
